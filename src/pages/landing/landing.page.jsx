@@ -4,8 +4,8 @@ import FeatureSection from '../../components/feature-section/feature-section'
 import HeroSection from '../../components/hero/hero-section'
 import TrustBuilderSection from '../../components/trust-builder-section/trust-builder-section';
 
-import { CurveBackground } from '../../assets/curve-background.svg';
-import { CurveWrapper, PageContainer } from './landing.css';
+import { CombinedSVG, CurveBackground } from '../../assets/curve-background.svg';
+import { CurveWrapper,  PageContainer  } from './landing.css';
 
 
 
@@ -15,7 +15,7 @@ export default function LandingPage() {
       <PageContainer>
         <HeroSection />
         <CurveWrapper>
-          <CurveBackground />
+          <CombinedSVG/>
         </CurveWrapper>
         <FeatureSection
           heading="Search for the car of your dreams and test drive it"
