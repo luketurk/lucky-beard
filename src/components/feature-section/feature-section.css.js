@@ -40,10 +40,22 @@ export const FeatureItem = styled.li`
 
 export const ImageContainer = styled.div`
   img {
-    max-width:400px;
-    height: auto;
+    width: 100%; 
+    max-width: 400px;
+    height: auto; 
+
+    @media (min-width: 768px) { 
+      max-width: 100%; 
+      height: auto; 
+    }
+
+    @media (min-width: 1024px) { 
+      max-width: 400px; 
+      height: auto; 
+    }
   }
 `;
+
 
 export const TextContainer = styled.div`
   flex: 1;
@@ -52,8 +64,8 @@ export const TextContainer = styled.div`
 
 export const FeatureSectionContainer = styled.div`
   background: #5A89EA;
-  z-index: 2 !important; 
-
+  z-index: 2; 
+  top:0;
   display: flex;
   flex-direction: ${({ imgPosition }) => imgPosition === 'left' ? 'row' : 'row-reverse'};
   align-items: center;
