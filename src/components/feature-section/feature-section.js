@@ -2,7 +2,7 @@ import React from 'react'
 
 import { FeatureItem, FeatureList, FeatureSectionContainer, ImageContainer, SectionContainer, SectionHeading, SectionSubText, TextContainer } from './feature-section.css'
 
-import { FeatureIcon, WhiteFeatureIcon } from '../../assets/images/icon.svgs'
+import {  WhiteFeatureIcon } from '../../assets/images/icon.svgs'
 import FeatureImage from '../../assets/images/feature-image.png';
 
 
