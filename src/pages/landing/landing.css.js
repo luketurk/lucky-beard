@@ -12,7 +12,7 @@ export const CurveWrapper = styled.div`
   left: 0;
   right: 0;
   overflow: hidden;
-  z-index: -1;
+  z-index: 3;
 
 
   svg {
@@ -36,14 +36,13 @@ export const CurveWrapper = styled.div`
 export const InnerCurveWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 100%; // or set to the height of your CurveBackground component
+  height: 100%; 
 `;
 
 export const StyledArrowIcon = styled(ArrowIcon)`
   position: absolute;
   left: 50%;
   transform: translate(-50%, 50%);
-  width: 50px; // or any other fixed size
+  width: 50px; 
   height: auto;
-  z-index:9999 !important;
 `;
