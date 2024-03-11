@@ -3,33 +3,42 @@ import heroImage from '../../assets/images/hero-image.jpg';
 
 
 export const Hero = styled.div`
-  background-image: url(${heroImage});
-  background-size: cover; 
-  background-position: center;
-  height: 100vh; 
+  height: 100vh;
   display: flex;
-  align-items: center; 
+  gap: 25px;
+  align-items: center;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   color: white;
   text-align: center;
   position: relative;
   padding: 15px;
-  z-index: -2; 
-  
+  z-index: 2;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${heroImage});
+    background-size: cover;
+    background-position: center;
+    transform: scaleX(-1); 
+    z-index: -1; 
+  }
+
   @media (max-width: 768px) {
-    height: 70vh; 
+    height: 70vh;
     padding: 10px;
   }
-  
+
   @media (max-width: 480px) {
-    height: 90vh; 
-    background-size: cover; 
-    background-repeat: no-repeat;
-    margin-bottom:100px;
+    height: 90vh;
+    margin-bottom: 100px;
   }
 `;
-
 export const Title = styled.h1`
   font-size: 62px; 
 
@@ -59,8 +68,8 @@ export const SubTitle = styled.h5`
 `;
 
 export const ButtonWrapper = styled.div`
-  flex:1;
-  justify-content:space-between;
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
 `;
-
 
