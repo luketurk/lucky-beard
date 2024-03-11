@@ -41,7 +41,7 @@ export const FeatureItem = styled.li`
 export const ImageContainer = styled.div`
   img {
     width: 100%; 
-    max-width: 400px;
+    max-width: 200px;
     height: auto; 
 
     @media (min-width: 768px) { 
@@ -64,7 +64,8 @@ export const TextContainer = styled.div`
 
 export const FeatureSectionContainer = styled.div`
   background: #5A89EA;
-  z-index: 2; 
+  position:relative;
+  z-index: 4; 
   top:0;
   display: flex;
   flex-direction: ${({ imgPosition }) => imgPosition === 'left' ? 'row' : 'row-reverse'};
