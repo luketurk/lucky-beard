@@ -1,21 +1,29 @@
+import React from "react";
 import styled from "styled-components";
 
 export const StyledSVG = styled.svg`
   width: 100%;
   height: auto;
-
-  @media (max-width: 480px) {
-    g.arrow {
-      transform: scale(20) translate(-20px, 10px);
-      transform-origin: center center;
-    }
-  }
 `;
 
 
-    export const CombinedSVG = () => (
-        <StyledSVG viewBox="0 -20 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Curve SVG paths */}
+    export const CombinedSVG = () => {
+
+      const [scale, setScale] = React.useState(1);
+
+      React.useEffect(() => {
+        function handleResize() {
+          const currentScale = window.innerWidth < 768 ? 1.5 : 1; 
+          setScale(currentScale);
+        }
+    
+        window.addEventListener('resize', handleResize);
+        handleResize(); 
+    
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+    
+        return (<StyledSVG viewBox="0 -20 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="959.5" cy="300" rx="1102.5" ry="275" fill="white" />
           <ellipse cx="959.5" cy="425" rx="1102.5" ry="411" fill="#030303" />
         <rect y="271" width="1920" height="1500" fill="#5A89EA" />
@@ -23,7 +31,7 @@ export const StyledSVG = styled.svg`
           <path fillRule="evenodd" clipRule="evenodd" d="M1934.16 273H-15.1553C169.917 110.611 536.948 0 959.5 0C1382.05 0 1749.08 110.611 1934.16 273Z" fill="#5A89EA" />
           
 
-          <g id="arrow" transform="translate(927 -20)"> 
+          <g id="arrow" transform={`translate(927 -20) scale(${scale})`}>
             <circle cx="34" cy="25" r="25" fill="#030303" />
             <circle cx="34" cy="25" r="25" fill="url(#paint0_linear)" fillOpacity="0.2" />
             <path d="M34 12L34 36" stroke="#5A89EA" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
@@ -46,5 +54,6 @@ export const StyledSVG = styled.svg`
             </linearGradient>
           </defs>
         </StyledSVG>
-      );
+        )
+    };
       
