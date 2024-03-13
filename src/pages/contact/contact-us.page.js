@@ -86,7 +86,6 @@ const DemoRequestPage = () => {
     const noErrors = Object.values(errors).every(
       (error) => error === null || error === ""
     );
-    console.log(Object.values(errors));
     const allFieldsFilled =
       formData.name &&
       formData.email &&
@@ -96,10 +95,7 @@ const DemoRequestPage = () => {
     return noErrors && allFieldsFilled;
   };
 
-  React.useEffect(() => {
-    isFormValid();
-  }, [formData]);
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
 
