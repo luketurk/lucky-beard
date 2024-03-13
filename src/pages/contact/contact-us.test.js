@@ -66,7 +66,6 @@ await act(async () => {
     expect(screen.getByText('Please enter a valid mobile number.')).toBeInTheDocument();
     expect(screen.getByText('Please enter a valid company name.')).toBeInTheDocument();
 
-    //
   });
 
 });
