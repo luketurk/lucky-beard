@@ -1,6 +1,4 @@
 import styled from "styled-components";
-
-
 import { FaChevronDown } from 'react-icons/fa';
 
 export const PageLayout = styled.div`
@@ -134,9 +132,6 @@ export const Select = styled.select`
     border-color: #5a89ea;
   }
 `;
-
-//
-
 
 export const BlackBanner = styled.div`
   background: var(--Dark-1, #030303);
