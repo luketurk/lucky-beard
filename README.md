@@ -51,11 +51,21 @@ In short, Styled Components made styling my app more straightforward, more flexi
 # 4) Issues experienced, solutions put in place
 
 ## 4.1) Implementing the first 'curve' on the landing page
- > solution: I combined the Arrow SVG and Curve SVG into one single SVG icon and exported it then used that on the landing page. I also tinkered with the z-index of the various parts of the section so everything fitted together seamlessly.
- 
- ## 4.2) <Select></Select> Chevron Icon  rotation onClick on the Select component
- > I built a custom dropdown component that handles the selection state, and rotates the chevron icon accordingly to match as the normal CSS
+> When I first tried to add the curve to the homepage, it was trickier than I expected. I started with CSS's clip-path, but it didn't quite do the job. Then, I thought about using the curve as an image directly from the design files. However, incorporating the down arrow icon with this approach became problematic.
 
+>> The solution came when I decided to merge the Down Arrow SVG with the Curve SVG into a single SVG. This approach worked well and fit seamlessly into the landing page design. To ensure everything layered correctly, I adjusted the z-index of different elements until they all aligned perfectly.
+ 
+
+ ## 4.2) Dynamic form validation
+
+ > problem: The main objectives was to ensure that the data entered by the users adhered to specific formats and that all required fields were filled out before submission, also I had to give real time feedback.
+
+ >> I created and used a `validateInput` function which checked each input against predefined validation rules, eg regex patterns for the name, emails, and mobile numbers, and length constraints for the various fields. This function returns an error message if the validation fails, which is then displayed next to the corresponding input field.
+
+ ## 4.3) <Select></Select> Custom Dropdown with Rotating Chevron Icon
+ > Initially, I attempted to use the standard HTML <select></select> element for the dropdown feature, but I hit a snag when trying to get the chevron icon to rotate as the dropdown opened and closed. The default just wasn't flexible enough to achieve the interactive effect I wanted.
+ 
+ >> I decided to create a custom dropdown component. This new component allowed me to manage the selection state more dynamically and rotate the chevron icon to indicate whether the dropdown was open or closed, providing a more intuitive and visually appealing user experience. The custom dropdown gave me full control over styling, as the native <select></select> element is notoriously difficult to style 
 
 # 5) What would I do if I had  additional time
 
