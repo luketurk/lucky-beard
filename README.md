@@ -1,6 +1,6 @@
 # Lucky Beard Demo
 
-This is a complete project as part of an interview process for a front end dev position at lucky beard.
+This is a  project as part of an interview process for a Front-End Engineer position at LuckyBeard.
 
 
 ## 1) Setup & Installation
