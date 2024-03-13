@@ -13,7 +13,7 @@ This is a  project as part of an interview process for a Front-End Engineer posi
 git clone https://github.com/luketurk/lucky-beard.git
 
 # Navigate to the project directory
-cd lucky-beard-demo
+cd lucky-beard
 
 # Install dependencies
 npm install
