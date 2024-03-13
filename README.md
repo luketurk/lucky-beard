@@ -1,7 +1,7 @@
 # Lucky Beard Demo
 
-
-![desktop-landing](src/assets/images/luckybearddemo1.png)
+This is a  project as part of an interview process for a Front-End Engineer position at Luckybeard 
+![mobile-landing](src/assets/images/luckybearddemo1.png)
 
 
 ## 1) Setup & Installation
