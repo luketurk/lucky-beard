@@ -66,8 +66,7 @@ await act(async () => {
     expect(screen.getByText('Please enter a valid mobile number.')).toBeInTheDocument();
     expect(screen.getByText('Please enter a valid company name.')).toBeInTheDocument();
 
-    // The role selection might not show an error immediately if it's a dropdown. You'll need to simulate an attempt to submit or another action that would validate the dropdown.
+    //
   });
 
-  // You can add more tests here for form submission or specific edge cases.
 });
