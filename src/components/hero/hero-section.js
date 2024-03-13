@@ -1,7 +1,6 @@
 import React from 'react';
 import { ButtonWrapper, Hero, SubTitle, Title } from './hero-section.css';
 import { AppleStoreButtonSVG, ArrowIcon, GooglePlaystoreButtonSVG } from '../../assets/images/icon.svgs';
-import NavBar from '../navbar/navbar';
 
 const HeroSection = () => {
   return (
