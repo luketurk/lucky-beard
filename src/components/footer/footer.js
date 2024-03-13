@@ -1,5 +1,5 @@
-import React from 'react'
-import { FooterContainer, FooterContent } from './footer.styles';
+import React from "react";
+import { FooterContainer, FooterContent } from "./footer.styles";
 
 const Footer = () => {
   return (
@@ -9,7 +9,9 @@ const Footer = () => {
         <span>|</span>
         <span>Registration number: 629444</span>
         <span>|</span>
-        <span>15 Harcourt street, St. Kevin's, Dublin 2 D02 XY47, Dublin, Ireland</span>
+        <span>
+          15 Harcourt street, St. Kevin's, Dublin 2 D02 XY47, Dublin, Ireland
+        </span>
       </FooterContent>
     </FooterContainer>
   );
