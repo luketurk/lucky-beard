@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import DownArrowIcon from "../../assets/images/DownArrowIcon.png";
 
 import { FaChevronDown } from 'react-icons/fa';
 
@@ -117,12 +116,12 @@ export const Chevron = styled(FaChevronDown)`
   top: 50%;
   transform: ${({ isRotated }) => isRotated ? 'translateY(-50%) rotate(180deg)' : 'translateY(-50%) rotate(0deg)'};
   transition: transform 0.3s ease-in-out;
-  pointer-events: none; // Prevent the chevron from blocking clicks on the select
+  pointer-events: none; 
 `;
 
 
 export const Select = styled.select`
-  padding: 0.5rem 2rem 0.5rem 0.5rem; // Right padding increased to make space for Chevron
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
   border: 0px solid #ccc;
   border-bottom: 1px solid #ccc;
   margin-bottom: 1rem;
