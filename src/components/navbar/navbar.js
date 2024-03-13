@@ -1,75 +1,88 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
 
-import Logo from '../../assets/images/Logo.png';
-
-const Nav = styled.nav`
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background: transparent;
-position: absolute;
-top:0;
-margin-top:50px;
-margin-left:50px;
-margin-right:50px;
-left: 20;
-z-index: 22;
-`;
-
-const NavLink = styled.a`
-color: white;
-text-decoration: none;
-font-family: Poppins, sans-serif;
-font-size: 16px;
-font-weight: 600;
-line-height: 100%;
-padding: 0.5em; 
-border-radius: 10px; 
-
-&:hover {
-  background: rgba(255, 255, 255, 0.2); 
-}
-`;
-
-const StyledLogo = styled.img`
-width: 131px;
-height: 132px;
-`;
-
-const NavItemWrapper = styled.div`
-display: flex;
-align-items: center;
-gap: 10px; 
-`;
-
-const DemoButton = styled.button`
-padding: 16px 20px;
-font-weight: 600;
-font-size: 16px; 
-color: white;
-background: #5A89EA;
-border: none;
-border-radius: 10px;
-cursor: pointer;
-transition: background-color 0.3s ease; 
-
-&:hover {
-  background: #3A69CA; 
-}
-`;
+import Logo from "../../assets/images/Logo.png";
+import {
+  BurgerIcon,
+  DemoButton,
+  Nav,
+  NavItemWrapper,
+  Overlay,
+  StyledLink,
+  StyledLogo,
+} from "./navbar.styles";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 768 && isOpen) {
+        setIsOpen(true);
+      } else if (window.innerWidth <= 768 && isOpen) {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isOpen]);
+
+
+  const handleNavigation = (elementId) => {
+    const navigateAndScroll = () => {
+      if (elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    };
+
+    if (window.location.pathname !== "/") {
+      navigate("/", { replace: true });
+      setTimeout(navigateAndScroll, 0);
+    } else {
+      navigateAndScroll();
+    }
+  };
+
   return (
-    <Nav>
-      <StyledLogo src={Logo} alt="Logo" />
-      <NavItemWrapper>
-        <NavLink href="#for-buyers">For buyers</NavLink>
-        <NavLink href="#for-sellers">For sellers</NavLink>
-        <DemoButton onClick={() => alert('Request a demo clicked')}>Request a demo</DemoButton>
-      </NavItemWrapper>
-    </Nav>
+    <>
+      <Overlay isOpen={isOpen} onClick={() => setIsOpen(false)} />
+      <Nav>
+        <StyledLogo src={Logo} alt="Logo" />
+        <NavItemWrapper isOpen={isOpen}>
+          <StyledLink
+            to="#"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation("for-buyers");
+              setIsOpen(false);
+            }}
+          >
+            For buyers
+          </StyledLink>
+          <StyledLink
+            to="#"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation("for-sellers");
+              setIsOpen(false);
+            }}
+          >
+            For sellers
+          </StyledLink>
+          <Link to="/contact" onClick={() => setIsOpen(false)}>
+            <DemoButton>Request a demo</DemoButton>
+          </Link>
+        </NavItemWrapper>
+        <BurgerIcon onClick={() => setIsOpen(!isOpen)} />
+      </Nav>
+    </>
   );
 };
 
