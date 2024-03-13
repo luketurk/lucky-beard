@@ -42,7 +42,7 @@ const DemoRequestPage = () => {
     switch (name) {
       case "name":
         if (!value.match(/^[A-Za-z ]{0,50}$/)) {
-          errorMessage = "Please enter a valid name.";
+          errorMessage = "Please enter a valid response.";
         }
         break;
       case "email":
@@ -50,22 +50,22 @@ const DemoRequestPage = () => {
           !value.match(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/) ||
           value.length > 50
         ) {
-          errorMessage = "Please enter a valid email.";
+          errorMessage = "Please enter a valid response.";
         }
         break;
       case "mobile":
         if (!value.match(/^\+?[0-9]{0,13}$/)) {
-          errorMessage = "Please enter a valid mobile number.";
+          errorMessage = "Please enter a valid response.";
         }
         break;
       case "company":
         if (!value.match(/^[A-Za-z0-9 ]{0,50}$/)) {
-          errorMessage = "Please enter a valid company name.";
+          errorMessage = "Please enter a valid response.";
         }
         break;
       case "role":
         if (!value || value === "") {
-          errorMessage = "Please select a role.";
+          errorMessage = "Please enter a valid response.";
         }
         break;
       default:
