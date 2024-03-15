@@ -33,10 +33,8 @@ npm start
 npm test
 ```
 
-# 3) CSS Framework
-## Styled-components 
-
-Why I chose styled-components
+# 3) Chosen Styling Approach: Styled-components
+For this project, I chose styled-components instead of a traditional CSS framework. Styled-components is a library made for React, which lets us write CSS directly in our JavaScript code. This fits really well with how React works, making it easy to style individual components.
 1) Easy to Use: Writing CSS inside JavaScript is straightforward with Styled Components, making it easy to style individual parts of my app without dealing with multiple CSS files.
 
 2) No Style Conflicts: Each component gets its unique style, so I don't have to worry about one part of my app accidentally changing the look of another.
